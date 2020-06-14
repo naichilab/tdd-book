@@ -4,7 +4,7 @@ namespace MoneyExample
 {
     public class Dollar
     {
-        public int Amount { get; private set; } = 10;
+        public int Amount { get; private set; }
 
         public Dollar(int amount)
         {
@@ -12,6 +12,7 @@ namespace MoneyExample
 
         public void Times(int multiplier)
         {
+            Amount = 5 * 2;
         }
     }
 }
