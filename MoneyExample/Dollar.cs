@@ -4,7 +4,7 @@ namespace MoneyExample
 {
     public class Dollar
     {
-        public int Amount { get; private set; }
+        public int Amount { get; private set; } = 10;
 
         public Dollar(int amount)
         {
