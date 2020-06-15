@@ -9,7 +9,7 @@ namespace MoneyExample
             Amount = amount;
         }
 
-        public Dollar Times(int multiplier)
+        public Money Times(int multiplier)
         {
             return new Dollar(Amount * multiplier);
         }
