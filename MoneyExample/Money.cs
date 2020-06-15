@@ -4,13 +4,13 @@ namespace MoneyExample
     {
         protected int Amount;
         protected string _currency;
-        
+
         public Money(int amount, string currency)
         {
             Amount = amount;
             _currency = currency;
         }
-        
+
         public abstract Money Times(int multiplier);
         public string Currency() => _currency;
 
@@ -23,12 +23,17 @@ namespace MoneyExample
 
         public static Money Dollar(int amount)
         {
-            return new Dollar(amount,"USD");
+            return new Dollar(amount, "USD");
         }
 
         public static Money Franc(int amount)
         {
             return new Franc(amount, "CHF");
+        }
+
+        public override string ToString()
+        {
+            return $"{Amount} {_currency}";
         }
     }
 }
