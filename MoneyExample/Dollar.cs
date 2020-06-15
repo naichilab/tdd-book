@@ -2,18 +2,16 @@
 
 namespace MoneyExample
 {
-    public class Dollar
+    public class Dollar : Money
     {
-        private readonly int _amount;
-
         public Dollar(int amount)
         {
-            _amount = amount;
+            Amount = amount;
         }
 
         public Dollar Times(int multiplier)
         {
-            return new Dollar(_amount * multiplier);
+            return new Dollar(Amount * multiplier);
         }
 
         public override bool Equals(object? obj)
@@ -21,7 +19,7 @@ namespace MoneyExample
             if (obj == null) return false;
             var other = obj as Dollar;
             if (other == null) return false;
-            return _amount == other._amount;
+            return Amount == other.Amount;
         }
     }
 }
