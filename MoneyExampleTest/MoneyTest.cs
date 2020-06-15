@@ -9,19 +9,19 @@ namespace MoneyExampleTest
         [Fact]
         public void TestMultiplication()
         {
-            Dollar five = new Dollar(5);
-            Assert.Equal(new Dollar(10), five.Times(2));
-            Assert.Equal(new Dollar(15), five.Times(3));
+            Money five = Money.Dollar(5);
+            Assert.Equal(Money.Dollar(10), five.Times(2));
+            Assert.Equal(Money.Dollar(15), five.Times(3));
         }
 
         [Fact]
         public void TestEquality()
         {
-            Assert.True(new Dollar(5).Equals(new Dollar(5)));
-            Assert.False(new Dollar(5).Equals(new Dollar(6)));
+            Assert.True(Money.Dollar(5).Equals(Money.Dollar(5)));
+            Assert.False(Money.Dollar(5).Equals(Money.Dollar(6)));
             Assert.True(new Franc(5).Equals(new Franc(5)));
             Assert.False(new Franc(5).Equals(new Franc(6)));
-            Assert.False(new Franc(5).Equals(new Dollar(5)));
+            Assert.False(new Franc(5).Equals(Money.Dollar(5)));
         }
 
         [Fact]
