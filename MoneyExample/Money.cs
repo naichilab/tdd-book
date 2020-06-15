@@ -21,7 +21,7 @@ namespace MoneyExample
 
         public static Money Franc(int amount)
         {
-            return new Franc(amount);
+            return new Franc(amount, null);
         }
     }
 }
