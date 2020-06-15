@@ -4,6 +4,13 @@ namespace MoneyExample
     {
         protected int Amount;
         protected string _currency;
+        
+        public Money(int amount, string currency)
+        {
+            Amount = amount;
+            _currency = currency;
+        }
+        
         public abstract Money Times(int multiplier);
         public string Currency() => _currency;
 
