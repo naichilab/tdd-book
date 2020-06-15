@@ -7,9 +7,8 @@ namespace MoneyExample
         public Franc(int amount)
         {
             Amount = amount;
+            _currency = "CHF";
         }
-
-        public override string Currency() => "CHF";
 
         public override Money Times(int multiplier)
         {

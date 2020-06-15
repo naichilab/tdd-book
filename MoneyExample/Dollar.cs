@@ -7,13 +7,12 @@ namespace MoneyExample
         public Dollar(int amount)
         {
             Amount = amount;
+            _currency = "USD";
         }
-        public override string Currency() => "USD";
 
         public override Money Times(int multiplier)
         {
             return new Dollar(Amount * multiplier);
         }
-
     }
 }

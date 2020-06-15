@@ -3,8 +3,9 @@ namespace MoneyExample
     public abstract class Money
     {
         protected int Amount;
+        protected string _currency;
         public abstract Money Times(int multiplier);
-        public abstract string Currency();
+        public string Currency() => _currency;
 
         public override bool Equals(object? obj)
         {
