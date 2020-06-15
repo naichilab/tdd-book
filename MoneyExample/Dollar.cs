@@ -18,7 +18,10 @@ namespace MoneyExample
 
         public override bool Equals(object? obj)
         {
-            return true;
+            if (obj == null) return false;
+            var other = obj as Dollar;
+            if (other == null) return false;
+            return Amount == other.Amount;
         }
     }
 }
