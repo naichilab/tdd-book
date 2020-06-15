@@ -9,6 +9,8 @@ namespace MoneyExample
             Amount = amount;
         }
 
+        public override string Currency() => "CHF";
+
         public override Money Times(int multiplier)
         {
             return new Franc(Amount * multiplier);
