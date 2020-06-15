@@ -7,12 +7,12 @@ namespace MoneyExample
         public Franc(int amount, string currency)
         {
             Amount = amount;
-            _currency = "CHF";
+            _currency = currency;
         }
 
         public override Money Times(int multiplier)
         {
-            return new Franc(Amount * multiplier,null);
+            return Money.Franc(Amount * multiplier);
         }
     }
 }
