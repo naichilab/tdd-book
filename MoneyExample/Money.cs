@@ -1,6 +1,6 @@
 namespace MoneyExample
 {
-    public abstract class Money
+    public class Money
     {
         protected int Amount;
         protected string _currency;
@@ -11,14 +11,18 @@ namespace MoneyExample
             _currency = currency;
         }
 
-        public abstract Money Times(int multiplier);
+        public Money Times(int multiplier)
+        {
+            return new Money(Amount * multiplier, _currency);
+        }
+
         public string Currency() => _currency;
 
         public override bool Equals(object? obj)
         {
             Money money = (Money) obj;
             return Amount == money.Amount
-                   && GetType().Equals(money.GetType());
+                   && Currency().Equals(money.Currency());
         }
 
         public static Money Dollar(int amount)
