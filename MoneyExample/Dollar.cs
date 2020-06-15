@@ -13,6 +13,5 @@ namespace MoneyExample
         {
             return new Dollar(Amount * multiplier);
         }
-
     }
 }
