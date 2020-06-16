@@ -7,6 +7,13 @@ namespace MoneyExampleTest
     public class MoneyTest
     {
         [Fact]
+        public void TestSimpleAddition()
+        {
+            Money sum = Money.Dollar(5).Plus(Money.Dollar(5));
+            Assert.Equal(Money.Dollar(10), sum);
+        }
+
+        [Fact]
         public void TestMultiplication()
         {
             Money five = Money.Dollar(5);
