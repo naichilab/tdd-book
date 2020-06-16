@@ -16,6 +16,11 @@ namespace MoneyExample
             return new Money(Amount * multiplier, _currency);
         }
 
+        public Money Plus(Money added)
+        {
+            return new Money(Amount + added.Amount, _currency);
+        }
+
         public string Currency() => _currency;
 
         public override bool Equals(object? obj)
