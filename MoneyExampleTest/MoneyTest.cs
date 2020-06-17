@@ -18,6 +18,16 @@ namespace MoneyExampleTest
         }
 
         [Fact]
+        public void TestPlusReturnSum()
+        {
+            Money five = Money.Dollar(5);
+            Expression result = five.Plus(five);
+            Sum sum = (Sum) result;
+            Assert.Equal(five, sum.Augend);
+            Assert.Equal(five, sum.Addend);
+        }
+
+        [Fact]
         public void TestMultiplication()
         {
             Money five = Money.Dollar(5);

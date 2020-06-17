@@ -18,7 +18,7 @@ namespace MoneyExample
 
         public Expression Plus(Money added)
         {
-            return new Money(Amount + added.Amount, _currency);
+            return new Sum(this, added);
         }
 
         public string Currency() => _currency;
