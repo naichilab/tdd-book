@@ -71,6 +71,18 @@ namespace MoneyExampleTest
         }
 
         [Fact]
+        public void TestSumPlusMoney()
+        {
+            Expression fiveBucks = Money.Dollar(5);
+            Expression tenFrancs = Money.Franc(10);
+            Bank bank = new Bank();
+            bank.AddRate("CHF", "USD", 2);
+            Expression sum = new Sum(fiveBucks, tenFrancs).Plus(fiveBucks);
+            Money result = bank.Reduce(sum, "USD");
+            Assert.Equal(Money.Dollar(15), result);
+        }
+
+        [Fact]
         public void TestMultiplication()
         {
             Money five = Money.Dollar(5);

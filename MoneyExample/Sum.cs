@@ -13,7 +13,7 @@ namespace MoneyExample
 
         public Expression Plus(Expression added)
         {
-            return null;
+            return new Sum(this, added);
         }
 
         public Money Reduce(Bank bank, string to)
