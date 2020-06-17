@@ -35,7 +35,7 @@ namespace MoneyExampleTest
             Money result = bank.Reduce(sum, "USD");
             Assert.Equal(Money.Dollar(7), result);
         }
-        
+
         [Fact]
         public void TestReduceMoney()
         {
@@ -44,7 +44,12 @@ namespace MoneyExampleTest
             Assert.Equal(Money.Dollar(1), result);
         }
 
-        
+        [Fact]
+        public void TestIdentityRate()
+        {
+            Assert.Equal(1, new Bank().Rate("USD", "USD"));
+        }
+
         [Fact]
         public void TestReduceMoneyDifferentCurrency()
         {

@@ -11,7 +11,7 @@ namespace MoneyExample
             Addend = addend;
         }
 
-        public Money Reduce(string to)
+        public Money Reduce(Bank bank, string to)
         {
             int amount = Augend.Amount + Addend.Amount;
             return new Money(amount, to);

@@ -21,9 +21,9 @@ namespace MoneyExample
             return new Sum(this, added);
         }
 
-        public Money Reduce(string to)
+        public Money Reduce(Bank bank, string to)
         {
-            int rate = (_currency.Equals("CHF") && to.Equals("USD")) ? 2 : 1;
+            int rate = bank.Rate(_currency, to);
             return new Money(Amount / rate, to);
         }
 
