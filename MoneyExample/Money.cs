@@ -11,12 +11,12 @@ namespace MoneyExample
             _currency = currency;
         }
 
-        public Money Times(int multiplier)
+        public Expression Times(int multiplier)
         {
             return new Money(Amount * multiplier, _currency);
         }
 
-        public Expression Plus(Money added)
+        public Expression Plus(Expression added)
         {
             return new Sum(this, added);
         }

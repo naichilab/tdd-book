@@ -2,13 +2,18 @@ namespace MoneyExample
 {
     public class Sum : Expression
     {
-        public Money Augend { get; set; }
-        public Money Addend { get; set; }
+        public Expression Augend { get; set; }
+        public Expression Addend { get; set; }
 
-        public Sum(Money augend, Money addend)
+        public Sum(Expression augend, Expression addend)
         {
             Augend = augend;
             Addend = addend;
+        }
+
+        public Expression Plus(Expression added)
+        {
+            return null;
         }
 
         public Money Reduce(Bank bank, string to)
