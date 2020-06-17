@@ -21,6 +21,11 @@ namespace MoneyExample
             return new Sum(this, added);
         }
 
+        public Money Reduce(string to)
+        {
+            return this;
+        }
+
         public string Currency() => _currency;
 
         public override bool Equals(object? obj)
