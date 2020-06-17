@@ -60,6 +60,17 @@ namespace MoneyExampleTest
         }
 
         [Fact]
+        public void TestMixedAddition()
+        {
+            Expression fiveBucks = Money.Dollar(5);
+            Expression tenFrancs = Money.Franc(10);
+            Bank bank = new Bank();
+            bank.AddRate("CHF", "USD", 2);
+            Money result = bank.Reduce(fiveBucks.Plus(tenFrancs), "USD");
+            Assert.Equal(Money.Dollar(10), result);
+        }
+
+        [Fact]
         public void TestMultiplication()
         {
             Money five = Money.Dollar(5);
