@@ -28,6 +28,15 @@ namespace MoneyExampleTest
         }
 
         [Fact]
+        public void TestReduceSum()
+        {
+            Expression sum = new Sum(Money.Dollar(3), Money.Dollar(4));
+            Bank bank = new Bank();
+            Money result = bank.Reduce(sum, "USD");
+            Assert.Equal(Money.Dollar(7), result);
+        }
+
+        [Fact]
         public void TestMultiplication()
         {
             Money five = Money.Dollar(5);

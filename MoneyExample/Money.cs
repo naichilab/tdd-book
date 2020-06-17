@@ -2,7 +2,7 @@ namespace MoneyExample
 {
     public class Money : Expression
     {
-        protected int Amount;
+        public int Amount;
         protected string _currency;
 
         public Money(int amount, string currency)
