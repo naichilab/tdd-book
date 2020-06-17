@@ -16,6 +16,11 @@ namespace MoneyExample
             return new Sum(this, added);
         }
 
+        public Expression Times(int multiplier)
+        {
+            return new Sum(Augend.Times(multiplier), Addend.Times(multiplier));
+        }
+
         public Money Reduce(Bank bank, string to)
         {
             int amount = Augend.Reduce(bank, to).Amount + Addend.Reduce(bank, to).Amount;
