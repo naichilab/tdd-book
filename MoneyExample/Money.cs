@@ -23,7 +23,8 @@ namespace MoneyExample
 
         public Money Reduce(string to)
         {
-            return this;
+            int rate = (_currency.Equals("CHF") && to.Equals("USD")) ? 2 : 1;
+            return new Money(Amount / rate, to);
         }
 
         public string Currency() => _currency;
