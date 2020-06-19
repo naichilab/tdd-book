@@ -12,8 +12,11 @@ class TestCase:
         result = TestResult()
         result.testStarted()
         self.setUp()
-        method = getattr(self, self.name)
-        method()
+        try:
+            method = getattr(self, self.name)
+            method()
+        except:
+            result.testFailed()
         self.tearDown()
         return result
 
@@ -67,7 +70,7 @@ class TestCaseTest(TestCase):
         assert ("1 run, 0 failed" == result.summary())
 
 
-TestCaseTest("testTemplateMethod").run()
-TestCaseTest("testResult").run()
-# TestCaseTest("testFailedResult").run()
-TestCaseTest("testFailedResultFormatting").run()
+print(TestCaseTest("testTemplateMethod").run().summary())
+print(TestCaseTest("testResult").run().summary())
+print(TestCaseTest("testFailedResult").run().summary())
+print(TestCaseTest("testFailedResultFormatting").run().summary())
